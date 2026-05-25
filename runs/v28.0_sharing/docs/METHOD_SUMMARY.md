@@ -8,7 +8,7 @@ The challenge asks us to predict missing even-month 15-minute incoming shortwave
 kt = observed_radiation / clear_sky_reference
 ```
 
-v28.0 is built around that view. It does not try to relearn all 15-minute radiation from scratch. Instead, it starts from a strong team submission shape and applies a physically constrained energy correction where validation and public feedback showed systematic bias: edge months.
+v28.0 is built around that view. It does not try to relearn all 15-minute radiation from scratch. Instead, it starts from the strong team submission `jieun20.csv` and applies a physically constrained energy correction where validation and public feedback showed systematic bias: edge months.
 
 ## Core Hypothesis
 
@@ -32,6 +32,9 @@ The script reads the following kinds of signals:
 - `fusion_reliability_score`, `fusion_sensor_disagreement`, `fusion_allsky_cv`: reliability diagnostics
 - prior-stage validation/test predictions: v16.6 and v17.7
 - strong team submissions: `jieun20.csv` as the final anchor, `ds15.csv` for diagnostics
+
+See `JIEUN20_ANCHOR_ANALYSIS.md` for the audit of the `jieun20` anchor and the
+team-provided model-ready input bundle.
 
 ## Monthly Energy Aggregation
 
@@ -125,7 +128,10 @@ validation edge months: March, November
 test edge months: February, December
 ```
 
-All non-edge test months remain equal to the anchor.
+All non-edge test months remain equal to the anchor. This is deliberate:
+`jieun20.csv` supplies the trusted 15-minute shape, while v28.0 only changes
+February and December when the monthly clear-sky-index energy evidence passes
+the configured edge-month correction path.
 
 ## Mean-Neutral Constraint
 
@@ -139,6 +145,9 @@ mean_delta_vs_jieun20 = -0.0036030358435313876
 MAE_vs_jieun20 = 0.4684304980392266
 RMSE_vs_jieun20 = 2.09467889158946
 ```
+
+The small global mean delta is important: v28.0 is best understood as a sparse
+physical correction to `jieun20`, not as a new full-test prediction model.
 
 ## Submission Guard
 

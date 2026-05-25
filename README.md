@@ -81,6 +81,30 @@ signals than as a full replacement for a strong anchor. The final solution
 therefore uses strong anchor shapes, then applies small, auditable physical
 energy corrections only where the validation story was credible.
 
+## Why jieun20 Mattered
+
+The final v28.0 submission is anchored to the team-provided `jieun20.csv`
+prediction shape. That file was stronger as a full 15-minute test prediction
+than any late from-scratch physical model we could safely validate. The v28.0
+contribution is therefore deliberately narrow: preserve the `jieun20` shape,
+estimate edge-month clear-sky-index energy from adjacent observed months and
+external physical sensors, then apply a mean-neutral correction only to
+February and December.
+
+The final submitted file stayed very close to the anchor:
+
+```text
+mean_delta_vs_jieun20 = -0.0036030358435313876
+MAE_vs_jieun20        = 0.4684304980392266
+RMSE_vs_jieun20       = 2.09467889158946
+```
+
+The `jieun20` audit also clarified provenance. The team-shared
+`candidate01_v1592_ta00338_m4m6m8m10_soft025.csv` file is identical to the
+`ds15.csv` diagnostic reference, while `jieun20.csv` is a distinct artifact and
+the actual v28.0 anchor. See
+`runs/v28.0_sharing/docs/JIEUN20_ANCHOR_ANALYSIS.md`.
+
 ## Version Evolution
 
 | stage | version | main idea | evidence / result | lesson |
@@ -188,6 +212,7 @@ applied.
 - `runs/v28.0_sharing/docs/REPRODUCTION.md`: commands and verification
 - `runs/v28.0_sharing/docs/DATA_USED.md`: required input artifacts and columns
 - `runs/v28.0_sharing/docs/DATA_SOURCES.md`: original data sources and download lineage
+- `runs/v28.0_sharing/docs/JIEUN20_ANCHOR_ANALYSIS.md`: team anchor provenance and input audit
 - `runs/v28.0_sharing/docs/GENERATED_INPUT_LINEAGE.md`: generated input lineage
 - `runs/v28.0_sharing/docs/UPSTREAM_V166_V177.md`: upstream v16.6/v17.7 artifact notes
 - `runs/v28.0_sharing/docs/ENVIRONMENT.md`: tested runtime environment

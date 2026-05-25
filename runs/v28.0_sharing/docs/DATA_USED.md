@@ -14,8 +14,8 @@ in `../data/ARTIFACT_MANIFEST.csv`.
 | `v166_submission.csv` | 32,242,044 | v16.6 test prediction artifact, used as a reference anchor candidate. |
 | `v177_val_predictions.csv` | 50,574,062 | v17.7 OOF validation prediction artifact, column `selected_pred`. |
 | `v177_submission.csv` | 32,243,440 | v17.7 test prediction artifact, used as a reference anchor candidate. |
-| `jieun20.csv` | 31,549,980 | Main strong team anchor submission used for the final v28.0 output. |
-| `ds15.csv` | 32,504,316 | Team reference submission used for diagnostics and candidate emission. |
+| `jieun20.csv` | 31,549,980 | Main strong team anchor submission used for the final v28.0 output. This is the actual anchor corrected by v28.0. |
+| `ds15.csv` | 32,504,316 | Team reference submission used for diagnostics and candidate emission. It matches the team-shared `candidate01_v1592_ta00338_m4m6m8m10_soft025.csv` artifact. |
 | `submission_reference_v28_0.csv` | 32,181,090 | Original v28.0 submitted file, included for equality checking. |
 | `metrics_reference_v28_0.json` | 18,943 | Original v28.0 metrics summary. |
 
@@ -58,6 +58,17 @@ This sharing pack starts after upstream feature/model stages:
 2. `v166_*` and `v177_*` files come from earlier model stacks and are used as OOF/test prediction artifacts.
 3. `jieun20.csv` is the strong team anchor that v28.0 corrects.
 4. `ds15.csv` is retained because the code emits diagnostic candidates against it.
+
+The local `jieun20` audit also reviewed a team-provided model-ready bundle with
+LSA-SAF, CAMS, NASA POWER, AOD, opacity, albedo, quality flags, and solar
+geometry already joined to the competition rows. Those large CSVs are not
+committed here. Their relevant contract is represented by the v20-derived
+`train_physical_preprocessed.csv` and `test_physical_preprocessed.csv` files,
+plus the external-data lineage under `DATA_SOURCES.md` and `../preprocessing/`.
+
+For the `jieun20` anchor audit, including the distinction between `jieun20.csv`,
+`ds15.csv`, and the team-shared `candidate01` file, see
+`JIEUN20_ANCHOR_ANALYSIS.md`.
 
 No external API keys, network calls, or manual spreadsheet edits are needed to
 run this pack once the listed artifacts have been placed next to the script.

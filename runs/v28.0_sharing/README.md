@@ -78,6 +78,7 @@ v28.0_sharing/
     REPRODUCTION.md
     DATA_USED.md
     DATA_SOURCES.md
+    JIEUN20_ANCHOR_ANALYSIS.md
     ENVIRONMENT.md
     GENERATED_INPUT_LINEAGE.md
     UPSTREAM_V166_V177.md
@@ -142,6 +143,7 @@ physics/meta correction:
 - `docs/REPRODUCTION.md`: exact commands and verification
 - `docs/DATA_USED.md`: required input files and their roles
 - `docs/DATA_SOURCES.md`: external data sources, access methods, and join policy
+- `docs/JIEUN20_ANCHOR_ANALYSIS.md`: audit of the `jieun20` team anchor and related shared inputs
 - `docs/GENERATED_INPUT_LINEAGE.md`: generated input lineage
 - `docs/UPSTREAM_V166_V177.md`: upstream v16.6/v17.7 artifact generation notes
 - `docs/ENVIRONMENT.md`: Python/package context
