@@ -7,9 +7,13 @@ are visible without requiring reviewers to inspect the full local workspace.
 
 ## Result
 
-| version | public score | Abs MBE | RMSE |
-|---|---:|---:|---:|
-| v28.0 | 0.449493955 | 2.611275853 | 60.52415722 |
+| leaderboard | rank | score | Abs MBE | RMSE |
+|---|---:|---:|---:|---:|
+| Public | - | 0.449493955 | 2.611275853 | 60.52415722 |
+| Private | 38 | 0.456169433 | 2.515170202 | 60.78379502 |
+
+For the broader project story, feature families, and version-by-version
+development history, see the repository root `README.md`.
 
 ## Artifact Policy
 
