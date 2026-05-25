@@ -1,0 +1,8 @@
+numpy==2.4.4
+pandas==3.0.2
+requests
+scikit-learn
+cdsapi
+earthengine-api
+eumdac
+h5py

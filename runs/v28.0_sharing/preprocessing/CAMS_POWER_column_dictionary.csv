@@ -1,0 +1,18 @@
+column,description
+cams_ghi_wm2,CAMS all-sky global horizontal irradiance converted from 15-min Wh/m2 to W/m2 average.
+cams_clear_ghi_wm2,"CAMS clear-sky global horizontal irradiance, W/m2 average."
+cams_bhi_wm2,"CAMS all-sky beam horizontal irradiance, W/m2 average."
+cams_dhi_wm2,"CAMS all-sky diffuse horizontal irradiance, W/m2 average."
+cams_bni_wm2,"CAMS all-sky beam normal irradiance, W/m2 average."
+cams_reliability,CAMS reliability flag/proportion in 0-1 range.
+cams_clearness,CAMS GHI divided by CAMS clear-sky GHI.
+cams_diffuse_fraction,CAMS DHI divided by CAMS GHI.
+cams_beam_fraction,CAMS BHI divided by CAMS GHI.
+power_allsky,NASA POWER hourly all-sky shortwave irradiance.
+power_clear,NASA POWER hourly clear-sky shortwave irradiance.
+power_cloud,NASA POWER hourly cloud amount.
+power_allsky_kt,NASA POWER hourly all-sky clearness index.
+external_cams_ghi_minus_dssf,CAMS all-sky GHI minus LSA SAF DSSF.
+external_dssf_cams_kt_gap,LSA SAF clear-sky ratio minus CAMS clear-sky ratio.
+external_satellite_mean_ghi,"Mean of LSA SAF DSSF, CAMS GHI, and NASA POWER all-sky where available."
+external_satellite_std_ghi,"Disagreement between LSA SAF, CAMS, and NASA POWER radiation estimates."

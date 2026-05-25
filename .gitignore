@@ -1,0 +1,40 @@
+# Python/runtime caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local environments
+.venv/
+venv/
+
+# Credentials and local external-data caches
+*.local.json
+data_external/
+runs/**/data/
+runs/**/raw/
+runs/**/raw_daily/
+runs/**/cams_raw/
+runs/**/nasa_power_raw/
+runs/**/pip_cache/
+
+# Output folders created by historical preprocessing scripts when run from repo root
+runs/v14.1/
+runs/v14.2/
+runs/v20.0_physical_preprocessing/
+runs/v25.1_sarah3_audit/
+runs/v25.6_sarah3_multi_day_pilot/
+
+# Large reproduction artifacts copied next to the v28.0 script at runtime.
+# They are documented in runs/v28.0_sharing/data/ARTIFACT_MANIFEST.csv.
+runs/v28.0_sharing/*.csv
+runs/v28.0_sharing/metrics*.json
+runs/v28.0_sharing/V28_0_METHOD_SUMMARY.md
+runs/v28.0_sharing/train.log
+runs/v28.0_sharing/diagnostics/
+runs/v28.0_sharing/submission_candidates/
+
+# Keep curated lightweight reference artifacts.
+!runs/v28.0_sharing/data/
+!runs/v28.0_sharing/data/ARTIFACT_MANIFEST.csv
+!runs/v28.0_sharing/data/README.md
+!runs/v28.0_sharing/reference_outputs/diagnostics/*.csv
